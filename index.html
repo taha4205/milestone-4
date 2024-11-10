@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fff;
+            color: #000;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            
+            color: #000;
+            font-size: 36px;
+            text-align: center;
+        }
+
+        form {
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            
+            max-width: 1000px;
+            margin: auto;
+            margin-bottom: 50px;
+           
+            flex-wrap: wrap;
+            
+        }
+
+        fieldset {
+            border: none;
+            margin-bottom: 50px;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #000;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            padding-top: 20px;
+            color: #000;
+            font-size: 18px;
+            text-align: center;
+            display: flex;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 18px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            background-color: #000;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s;
+            display: block;
+            margin: 0 auto;
+        }
+
+        button:hover {
+            background-color: #444;
+        }
+
+        #resume-display {
+            margin-top: 20px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            min-height: 200px;
+            
+            font-size: 18px;
+            color: #000;
+        }
+        #resume-display h2{
+        text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Resume Builder</h1>
+    <form id="resume-form">
+        <fieldset>
+            <legend>Personal Information</legend>
+            <label for="name">Name:
+                <input type="text" id="name" placeholder="Enter your name" required><br>
+            </label>
+
+            <label for="email">Email:
+
+                <input type="email" id="email" placeholder="Enter your email" required><br>
+            </label>
+
+            <label for="phone">Phone:
+                
+                <input type="tel" id="phone" placeholder="Enter your phone number" required><br>
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Education</legend>
+            <label for="education">Education:</label>
+            <textarea id="education" placeholder="Enter your education" rows="4" required></textarea><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Experience</legend>
+            <label for="experience">Experience:</label>
+            <textarea id="experience" placeholder="Enter your work experience" rows="4" required></textarea><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Skills</legend>
+            <label for="skills">Skills:</label>
+            <textarea id="skills" placeholder="Enter your skills" rows="4" required></textarea><br>
+        </fieldset>
+
+        <button type="submit">Generate Resume</button>
+    </form>
+
+
+    <div id="resume-display">
+        
+    </div>
+    <button onclick="edit()" class="edit">Edit</button>
+
+</body>
+</html>
