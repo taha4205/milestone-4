@@ -1,7 +1,6 @@
 "use strict";
-const form = document.getElementById('resume-form');
-const resumeDisplayElement = document.getElementById('resume-display');
-form.addEventListener('submit', (event) => {
+var form = document.getElementById('resume-form');
+form.addEventListener('submit', function (event) {
     event.preventDefault();
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
@@ -9,26 +8,21 @@ form.addEventListener('submit', (event) => {
     const education = document.getElementById('education').value;
     const experience = document.getElementById('experience').value;
     const skills = document.getElementById('skills').value;
-    const resumeHTML = `
-    <h2><b>Editable Resume</b></h2>
-    <h3>Personal Information</h3>
-    <p><b>Name:</b><span contenteditable="true">${name}</span></p>
-    <p><b>Email:</b><span contenteditable="true">${email}</span></p>
-    <p><b>Phone:</b><span contenteditable="true">${phone}</span></p>
-
-    <h3>Education</h3>
-    <p contenteditable="true">${education}</p>
-
-    <h3>Experience</h3>
-    <p contenteditable="true">${experience}</p>
-
-    <h3>Skills</h3>
-    <p contenteditable="true">${skills}</p>
+    const resumeContent = `
+      <h2>${name}</h2>
+          <h3>Contact</h3>
+      <p>Email: ${email}</p>
+      <p>Phone: ${phone}</p>
+      <h3>Education</h3>
+      <p>${education}</p>
+      <h3>Experience</h3>
+      <p>${experience}</p>
+      <h3>Skills</h3>
+      <p>${skills}</p>
   `;
-    if (resumeDisplayElement) {
-        resumeDisplayElement.innerHTML = resumeHTML;
-    }
-    else {
-        console.error('The resume display element is missing.');
-    }
+    document.getElementById('resume-display').innerHTML = resumeContent;
+    document.getElementById('resume-form').style.display = "none";
 });
+function edit() {
+    document.getElementById('resume-form').style.display = "block";
+}
